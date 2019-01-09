@@ -1,0 +1,36 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ProjetMobileB3.Views.PublicProfile">
+
+    <ScrollView>
+        <StackLayout Spacing="0" Padding="0" BackgroundColor="White">
+            <Image Source="tibo.jpg" HeightRequest="60" WidthRequest="60"
+                   BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Start" />
+            <StackLayout HeightRequest="100" VerticalOptions="Start" Spacing="20" BackgroundColor="White">
+                <Label Text="Tibo Inshape" FontSize="28" HorizontalOptions="Center"
+                       VerticalOptions="Center" FontAttributes="Bold" />
+            </StackLayout>
+            <StackLayout Spacing="0" Padding="0" BackgroundColor="White">
+                <Label Text="Categorie : Musculation" FontSize="15" HorizontalOptions="Center"
+                       VerticalOptions="Center" FontAttributes="Bold" />
+                <Label Text="Note : 5" FontSize="15" HorizontalOptions="Center"
+                       VerticalOptions="Center" FontAttributes="Bold" />
+                <Label Text="Nombre d'évaluation : 15" FontSize="15" HorizontalOptions="Center" FontAttributes="Bold"
+                       VerticalOptions="Center" />
+            </StackLayout>
+            <StackLayout Orientation="Horizontal" HeightRequest="50" BackgroundColor="White" Padding="5"
+                         HorizontalOptions="Center" VerticalOptions="Center">
+                <StackLayout  BackgroundColor="White" Orientation="Vertical" HorizontalOptions="Center"
+                              VerticalOptions="Center">
+                    <Image Source="neutre.png" HeightRequest="60" WidthRequest="60"
+                           BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+            <Button Text="Donner mon avis!" Command="{Binding NavigateToProfilCommand}"></Button>
+        </StackLayout>
+    </ScrollView>
+
+</ContentPage>

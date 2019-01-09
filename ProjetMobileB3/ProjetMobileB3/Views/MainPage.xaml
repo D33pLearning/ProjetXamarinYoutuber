@@ -11,7 +11,7 @@
                         <ImageCell 
                             ImageSource="tibo.jpg" 
                             Text="Tibo Inshape" 
-                            Command="{Binding NavigateToProfilePageCommand}">
+                            Command="{Binding NavigateToPublicProfilePageCommand}">
                         </ImageCell>
                         <ImageCell 
                             ImageSource="squeezie.png" 

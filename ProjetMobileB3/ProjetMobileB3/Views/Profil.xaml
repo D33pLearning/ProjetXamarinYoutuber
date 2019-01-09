@@ -5,37 +5,38 @@
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ProjetMobileB3.Views.Profil">
     
-        
-        <!-- <Label Text="Note"></Label>
-        <Label></Label>
-        <Label Text="Commentaire"></Label>
-        <Label Text="Catégorie"></Label>
-        <Label Text="Arnaques / Mauvaises pratiques"></Label>
-        <Label Text="Age recommandé par les utilisateurs"></Label>
-        <Label Text="Recommandation"></Label> -->
     <ScrollView>
         <StackLayout>
-            <Label Text="Le youtubeur est responsable d'une arnaque / mauvais comportement"></Label>
-            <Picker Title="Arnaque" 
-                    ItemsSource="{Binding Arnaques}" 
+            <Label Text="Le youtubeur est responsable d'une arnaque / mauvais comportement" 
+                   FontSize="15" HorizontalOptions="Start"
+                   FontAttributes="Bold" />
+            <Picker FontAttributes="Bold" ItemsSource="{Binding Arnaques}" 
                     ItemDisplayBinding="">
             </Picker>
-            <Label Text="Quel age minimum recommanderiez vous pour le contenu proposé"></Label>
-            <Picker Title="Age" 
-                    ItemsSource="{Binding Ages}" 
+            <Label Text="Quel age minimum recommanderiez vous pour le contenu proposé"
+                   FontSize="15" HorizontalOptions="Start"
+                   FontAttributes="Bold">
+            </Label>
+            <Picker FontAttributes="Bold" ItemsSource="{Binding Ages}" 
                     ItemDisplayBinding="">
             </Picker>
-            <Label Text="Quelle note lui accorderiez vous?"></Label>
-            <Picker Title="Note" 
+            <Label Text="Quelle note lui accorderiez vous?" FontSize="15" HorizontalOptions="Start"
+                   FontAttributes="Bold">
+            </Label>
+            <Picker 
+                    FontAttributes="Bold" 
                     ItemsSource="{Binding Notes}" 
                     ItemDisplayBinding="">
             </Picker>
-
-            <Label Text="Commentaire"></Label>
-            <Entry Keyboard="Text"></Entry>
-
-            <Button Text="Valider" Command="{Binding NavigateToAddYoutuberCommand}"></Button>
-            
+            <Label Text="Commentaire" FontSize="15" HorizontalOptions="Start"
+                   FontAttributes="Bold">
+            </Label>
+            <Entry Keyboard="Text" 
+                   FontAttributes="Bold">
+            </Entry>
+            <Button Text="Valider" 
+                    Command="{Binding NavigateToAddYoutuberCommand}">
+            </Button>
         </StackLayout>
     </ScrollView>
         

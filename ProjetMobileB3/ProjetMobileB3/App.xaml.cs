@@ -32,6 +32,7 @@ namespace ProjetMobileB3
             containerRegistry.RegisterForNavigation<MainPage, MainPageViewModel>();
             containerRegistry.RegisterForNavigation<Profil, ProfilViewModel>();
             containerRegistry.RegisterForNavigation<AddYoutuber, AddYoutuberViewModel>();
+            containerRegistry.RegisterForNavigation<PublicProfile, PublicProfileViewModel>();
         }
     }
 }

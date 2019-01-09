@@ -10,9 +10,9 @@ namespace ProjetMobileB3.ViewModels
 {
     public class MainPageViewModel : ViewModelBase
     {
-        private const String NAVIGATE_TO_PROFILE_PAGE = "Profil";  
+        private const String NAVIGATE_TO_PUBLIC_PROFILE_PAGE = "PublicProfile";  
         private INavigationService _navigationService;
-        public DelegateCommand NavigateToProfilePageCommand { get; private set; }
+        public DelegateCommand NavigateToPublicProfilePageCommand { get; private set; }
         public DelegateCommand NavigateToAddYoutuberCommand { get; private set; }
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
@@ -21,13 +21,13 @@ namespace ProjetMobileB3.ViewModels
 
             _navigationService = navigationService;
             NavigateToAddYoutuberCommand = new DelegateCommand(NavigateToAddYoutuberPage);
-            NavigateToProfilePageCommand = new DelegateCommand(NavigateToProfilePage);
+            NavigateToPublicProfilePageCommand = new DelegateCommand(NavigateToPublicProfilePage);
             
         }
 
-        private void NavigateToProfilePage()
+        private void NavigateToPublicProfilePage()
         {
-            _navigationService.NavigateAsync(NAVIGATE_TO_PROFILE_PAGE);
+            _navigationService.NavigateAsync(NAVIGATE_TO_PUBLIC_PROFILE_PAGE);
         }
 
         private void NavigateToAddYoutuberPage()
