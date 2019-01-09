@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
+             prism:ViewModelLocator.AutowireViewModel="True"
+             x:Class="ProjetMobileB3.Views.Profil">
+    
+        
+        <!-- <Label Text="Note"></Label>
+        <Label></Label>
+        <Label Text="Commentaire"></Label>
+        <Label Text="Catégorie"></Label>
+        <Label Text="Arnaques / Mauvaises pratiques"></Label>
+        <Label Text="Age recommandé par les utilisateurs"></Label>
+        <Label Text="Recommandation"></Label> -->
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Le youtubeur est responsable d'une arnaque / mauvais comportement"></Label>
+            <Picker Title="Arnaque" 
+                    ItemsSource="{Binding Arnaques}" 
+                    ItemDisplayBinding="">
+            </Picker>
+            <Label Text="Quel age minimum recommanderiez vous pour le contenu proposé"></Label>
+            <Picker Title="Age" 
+                    ItemsSource="{Binding Ages}" 
+                    ItemDisplayBinding="">
+            </Picker>
+            <Label Text="Quelle note lui accorderiez vous?"></Label>
+            <Picker Title="Note" 
+                    ItemsSource="{Binding Notes}" 
+                    ItemDisplayBinding="">
+            </Picker>
+
+            <Label Text="Commentaire"></Label>
+            <Entry Keyboard="Text"></Entry>
+
+            <Button Text="Valider" Command="{Binding NavigateToAddYoutuberCommand}"></Button>
+            
+        </StackLayout>
+    </ScrollView>
+        
+</ContentPage>

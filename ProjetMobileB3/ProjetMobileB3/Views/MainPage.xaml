@@ -1,0 +1,28 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ProjetMobileB3.Views.MainPage"
+             Title="{Binding Title}">
+    <ScrollView>
+        <StackLayout >
+            <TableView>
+                <TableRoot>
+                    <TableSection>
+                        <ImageCell 
+                            ImageSource="tibo.jpg" 
+                            Text="Tibo Inshape" 
+                            Command="{Binding NavigateToProfilePageCommand}">
+                        </ImageCell>
+                        <ImageCell 
+                            ImageSource="squeezie.png" 
+                            Text="Squeezie" >
+                        </ImageCell>
+                    </TableSection>
+                </TableRoot>
+            </TableView>
+            <Button Text="Ajouter un nouveau Youtubeur" Command="{Binding NavigateToAddYoutuberCommand}"></Button>
+        </StackLayout>
+    </ScrollView>
+    
+
+</ContentPage>

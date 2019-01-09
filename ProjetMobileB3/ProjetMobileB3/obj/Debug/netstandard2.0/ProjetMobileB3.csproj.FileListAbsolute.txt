@@ -1,0 +1,14 @@
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\bin\Debug\netstandard2.0\ProjetMobileB3.deps.json
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\bin\Debug\netstandard2.0\ProjetMobileB3.dll
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\bin\Debug\netstandard2.0\ProjetMobileB3.pdb
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\App.xaml.g.cs
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Views\Profil.xaml.g.cs
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.csproj.CoreCompileInputs.cache
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.AssemblyInfoInputs.cache
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.AssemblyInfo.cs
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\XamlC.stamp
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.dll
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.pdb
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.csprojAssemblyReference.cache
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Views\AddYoutuber.xaml.g.cs
