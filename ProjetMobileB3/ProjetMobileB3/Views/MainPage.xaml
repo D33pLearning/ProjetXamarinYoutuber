@@ -2,25 +2,26 @@
 <ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              x:Class="ProjetMobileB3.Views.MainPage"
-             Title="{Binding Title}">
+             Title="{Binding Title}"
+             x:Name="MainPageX">
+
     <ScrollView>
         <StackLayout >
-            <TableView>
-                <TableRoot>
-                    <TableSection>
-                        <ImageCell 
-                            ImageSource="tibo.jpg" 
-                            Text="Tibo Inshape" 
-                            Command="{Binding NavigateToPublicProfilePageCommand}">
+            <ListView ItemsSource="{Binding Youtubers}" x:Name="YoutubersList" 
+                      SelectedItem="{Binding SelectedYoutuber, Mode=TwoWay}">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ImageCell x:Name="Item"
+                                   ImageSource="{Binding Logo}"
+                                   Text="{Binding Nickname}"
+                                   Command="{Binding BindingContext.NavigateToPublicProfilePageCommand, 
+                            Source={x:Reference Name=MainPageX}}"
+                        >
                         </ImageCell>
-                        <ImageCell 
-                            ImageSource="squeezie.png" 
-                            Text="Squeezie" >
-                        </ImageCell>
-                    </TableSection>
-                </TableRoot>
-            </TableView>
-            <Button Text="Ajouter un nouveau Youtubeur" Command="{Binding NavigateToAddYoutuberCommand}"></Button>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+            <Button Text="Ajouter un nouveau youtubeur!" Command="{Binding NavigateToAddYoutuberCommand}"></Button>
         </StackLayout>
     </ScrollView>
     

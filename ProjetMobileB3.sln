@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 15
 VisualStudioVersion = 15.0.28010.2026
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetMobileB3", "ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.csproj", "{AE20EE5C-7BE2-49F6-B40E-56C0067C52C6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "ProjetMobileB3", "ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.csproj", "{AE20EE5C-7BE2-49F6-B40E-56C0067C52C6}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ProjetMobileB3.Android", "ProjetMobileB3\ProjetMobileB3.Android\ProjetMobileB3.Android.csproj", "{DA5A8A7B-4CB8-4D28-8A4C-6D2B51F43A94}"
 EndProject

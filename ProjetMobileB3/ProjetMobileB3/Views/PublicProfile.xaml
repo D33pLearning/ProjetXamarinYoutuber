@@ -7,6 +7,7 @@
 
     <ScrollView>
         <StackLayout Spacing="0" Padding="0" BackgroundColor="White">
+            
             <Image Source="tibo.jpg" HeightRequest="60" WidthRequest="60"
                    BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Start" />
             <StackLayout HeightRequest="100" VerticalOptions="Start" Spacing="20" BackgroundColor="White">

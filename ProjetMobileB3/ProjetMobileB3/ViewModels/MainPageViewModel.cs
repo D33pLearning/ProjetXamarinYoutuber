@@ -1,6 +1,7 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using ProjetMobileB3.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
@@ -14,6 +15,8 @@ namespace ProjetMobileB3.ViewModels
         private INavigationService _navigationService;
         public DelegateCommand NavigateToPublicProfilePageCommand { get; private set; }
         public DelegateCommand NavigateToAddYoutuberCommand { get; private set; }
+
+        
         public MainPageViewModel(INavigationService navigationService)
             : base(navigationService)
         {
@@ -22,7 +25,9 @@ namespace ProjetMobileB3.ViewModels
             _navigationService = navigationService;
             NavigateToAddYoutuberCommand = new DelegateCommand(NavigateToAddYoutuberPage);
             NavigateToPublicProfilePageCommand = new DelegateCommand(NavigateToPublicProfilePage);
+
             
+
         }
 
         private void NavigateToPublicProfilePage()

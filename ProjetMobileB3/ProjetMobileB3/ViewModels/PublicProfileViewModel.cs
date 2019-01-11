@@ -7,15 +7,18 @@ using System.Linq;
 
 namespace ProjetMobileB3.ViewModels
 {
-	public class PublicProfileViewModel : BindableBase
+	public class PublicProfileViewModel : ViewModelBase
 	{
 	    private const String NAVIGATE_TO_PROFIL_PAGE = "Profil";
 	    private INavigationService _navigationService;
 	    public DelegateCommand NavigateToProfilCommand { get; private set; }
-        public PublicProfileViewModel(INavigationService navigationService)
+
+        public PublicProfileViewModel(INavigationService navigationService): base(navigationService)
         {
             _navigationService = navigationService;
             NavigateToProfilCommand = new DelegateCommand(NavigateToProfilPage);
+
+       
         }
 
 	    private void NavigateToProfilPage()
