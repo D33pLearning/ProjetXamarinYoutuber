@@ -101,7 +101,7 @@
     "Microsoft.NETCore.Platforms/1.1.0": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-kz0PEW2lhqygehI/d6XsPCQzD7ff7gUJaVGPVETX611eadGsA3A877GdSlU0LRVMCTH/+P3o2iDTak+S08V2+A==",
+      "sha512": "sha512-bLpT1f/SFlO1CzqXG12KnJzpZs6lv24uX2Rzi4Fmm0noJpNlnWRVryuO3yK18Ca04t/YHcO1e1Z0WDfjseqNzw==",
       "path": "microsoft.netcore.platforms/1.1.0",
       "hashPath": "microsoft.netcore.platforms.1.1.0.nupkg.sha512"
     },
@@ -115,42 +115,42 @@
     "Prism.Core/7.1.0.431": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-tBkEf4cDYn2oQfW1wPem4jJK/H1Z4mJsnndO04n2oZyIql7Bj3OVlpfQ6vbPgbtlkEN0oyn02XVurZba3DYqmQ==",
+      "sha512": "sha512-l4sBztXr1d2aJ1Ub5OKcd8dkf18UV7k+DWRbi0uen8y0pqb0tH+OC1/B35ZvaxMNlCtl1VZYbeq6wypdcrt92A==",
       "path": "prism.core/7.1.0.431",
       "hashPath": "prism.core.7.1.0.431.nupkg.sha512"
     },
     "Prism.Forms/7.1.0.431": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-sbwu3Ao4yUPVQ4gln1EA5N9vOj/NkaOEYNoCvuY5BOGlkTQod5gPnGJST2ZFsj1gHLJHSdvlT5OP+RKEeqo7pQ==",
+      "sha512": "sha512-L9CQS9PKFXSjpYEdDQeucmzF7kOH5af+dgVBgv5+zId6Rjyzk4OMyzG0BH05zQiWCsbx3qnXJG7Mc8Q4qeMlEQ==",
       "path": "prism.forms/7.1.0.431",
       "hashPath": "prism.forms.7.1.0.431.nupkg.sha512"
     },
     "Prism.Unity.Forms/7.1.0.431": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-o2qR/dF/CsTO7HyJuQ7Yfc9T1ve/OufWZmZv6N40TfCQXrCIg3g0DMd8yFCaoYOt8yA0T51N8PfBZyVjJimhGQ==",
+      "sha512": "sha512-Livpa/Tu3HgIT1pcCyFdjpEU864rqnW5tVVQIXBhLi5NOcGcoEjYdxvbmVtm3CWxYGQJpu8QOHtA0hM+pj0BXA==",
       "path": "prism.unity.forms/7.1.0.431",
       "hashPath": "prism.unity.forms.7.1.0.431.nupkg.sha512"
     },
     "Unity.Abstractions/3.3.1": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-6Noq6W6cnB+TFgCf9FfgCN9wTVOiKI0eC1tl4dvbA3xg4ZSULKlpXMf2TVM945y/c1KvEdrq19joxHBOBB8rJA==",
+      "sha512": "sha512-2dFFUnyzSHDgyqVeZBo4X1M3mxh+XCdK66aiuALuPWwXsqmGuGfqD0/sbDNnA5FGYnqby4Fb+4X/JqoN+NjhuA==",
       "path": "unity.abstractions/3.3.1",
       "hashPath": "unity.abstractions.3.3.1.nupkg.sha512"
     },
     "Unity.Container/5.8.11": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-DGjzMnWjS4DvhXzVLnz2HfxEtwgPmfTwK31HILkL9ySiTSsshWWCGixfOo/nzcVzbBxeIwFbZ44jDqCqPMNENA==",
+      "sha512": "sha512-8XEfzRwoX/9NtHU4WapD3DdCxBQumIoDIIEBbqElhr2Y5HwokaAkiomuIKvVW9znNDtv1az3i1xKM6usiiWjqg==",
       "path": "unity.container/5.8.11",
       "hashPath": "unity.container.5.8.11.nupkg.sha512"
     },
     "Xamarin.Forms/3.2.0.839982": {
       "type": "package",
       "serviceable": true,
-      "sha512": "sha512-BtiTMpmTqkzPPlGvQEVrO51kC1e/vieOaGHB+bKUULER0ruf2EQ92zVRwuvLop60g0WQQJ0Arj45TNCu6qCINQ==",
+      "sha512": "sha512-r2qGQiZrNVjvyNlfi39C7rmPnMrmz+O1A2FkJ3SR0Ac5ZXTfAOB6KpAtITOV7bRmJlEUAltFXPh6snO0VFdz+g==",
       "path": "xamarin.forms/3.2.0.839982",
       "hashPath": "xamarin.forms.3.2.0.839982.nupkg.sha512"
     }

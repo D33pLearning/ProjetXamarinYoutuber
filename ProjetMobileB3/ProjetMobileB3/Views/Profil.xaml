@@ -3,7 +3,8 @@
              xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
-             x:Class="ProjetMobileB3.Views.Profil">
+             x:Class="ProjetMobileB3.Views.Profil"
+             x:Name="ProfilX">
     
     <ScrollView>
         <StackLayout>
@@ -11,31 +12,26 @@
                    FontSize="15" HorizontalOptions="Start"
                    FontAttributes="Bold" />
             <Picker FontAttributes="Bold" ItemsSource="{Binding Arnaques}" 
-                    ItemDisplayBinding="">
+                    SelectedItem="{Binding Choice, Mode=TwoWay}">
             </Picker>
             <Label Text="Quel age minimum recommanderiez vous pour le contenu proposé"
                    FontSize="15" HorizontalOptions="Start"
                    FontAttributes="Bold">
             </Label>
             <Picker FontAttributes="Bold" ItemsSource="{Binding Ages}" 
-                    ItemDisplayBinding="">
+                     SelectedItem="{Binding ChoiceAdvisedAge}">
             </Picker>
             <Label Text="Quelle note lui accorderiez vous?" FontSize="15" HorizontalOptions="Start"
-                   FontAttributes="Bold">
+                   FontAttributes="Bold"
+                   >
             </Label>
             <Picker 
                     FontAttributes="Bold" 
                     ItemsSource="{Binding Notes}" 
-                    ItemDisplayBinding="">
+                    SelectedItem="{Binding ChoiceAverageRate, Mode=TwoWay}">
             </Picker>
-            <Label Text="Commentaire" FontSize="15" HorizontalOptions="Start"
-                   FontAttributes="Bold">
-            </Label>
-            <Entry Keyboard="Text" 
-                   FontAttributes="Bold">
-            </Entry>
             <Button Text="Valider" 
-                    Command="{Binding NavigateToAddYoutuberCommand}">
+                    Command="{Binding NavigateToPublicProfilePageCommand}">
             </Button>
         </StackLayout>
     </ScrollView>

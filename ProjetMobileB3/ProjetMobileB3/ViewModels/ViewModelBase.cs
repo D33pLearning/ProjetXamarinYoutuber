@@ -14,49 +14,26 @@ namespace ProjetMobileB3.ViewModels
     {
         protected INavigationService NavigationService { get; private set; }
 
-        public List<Youtuber> Youtubers { get; set; }
-        public string Test { get; set; }
+        
+        public List<Opinion> Opinions { get; set; }
         private string _title;
         public string Title
         {
             get { return _title; }
-            set { SetProperty(ref _title, value); }
+            set { SetProperty(ref _title, value);
+                
+            }
         }
 
-        private Youtuber _selectedYoutuber;
-        public Youtuber SelectedYoutuber
-        {
-            get { return _selectedYoutuber; }
-            set
-            {
-                _selectedYoutuber = value;
-                RaisePropertyChanged("SelectedYoutuber");
-            }
-            
-        }
+   
 
         public ViewModelBase(INavigationService navigationService)
         {
             NavigationService = navigationService;
 
-            Youtubers = new List<Youtuber>();
-            Youtubers.Add(new Youtuber(1, "TiboInShape", "tibo.jpg"));
-            Youtubers.Add(new Youtuber(2, "Squezzie", "squeezie.jpg"));
-            /*if (SelectedYoutuber == null)
-                Test = "Empty";
-            else
-            {
-                Test = "Pas empty";
-            }*/
+            
 
-        }
-
-        public string GetIdYoutuber()
-        {
-            /*if (SelectedYoutuber == null)
-                return "hello";
-            return SelectedYoutuber.Nickname;*/
-            return("hello");
+            Opinions = new List<Opinion>();
         }
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)

@@ -7,30 +7,44 @@
 
     <ScrollView>
         <StackLayout Spacing="0" Padding="0" BackgroundColor="White">
-            
-            <Image Source="tibo.jpg" HeightRequest="60" WidthRequest="60"
+            <Image Source="{Binding SelectedYoutuber.Logo}" HeightRequest="60" WidthRequest="60"
                    BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Start" />
             <StackLayout HeightRequest="100" VerticalOptions="Start" Spacing="20" BackgroundColor="White">
-                <Label Text="Tibo Inshape" FontSize="28" HorizontalOptions="Center"
+                <Label Text="{Binding SelectedYoutuber.Nickname}" FontSize="28" HorizontalOptions="Center"
                        VerticalOptions="Center" FontAttributes="Bold" />
+                <Image Source="{Binding SelectedYoutuber.EmojiStars}" WidthRequest="30" HeightRequest="30" IsVisible="True"></Image>
             </StackLayout>
             <StackLayout Spacing="0" Padding="0" BackgroundColor="White">
-                <Label Text="Categorie : Musculation" FontSize="15" HorizontalOptions="Center"
-                       VerticalOptions="Center" FontAttributes="Bold" />
-                <Label Text="Note : 5" FontSize="15" HorizontalOptions="Center"
-                       VerticalOptions="Center" FontAttributes="Bold" />
-                <Label Text="Nombre d'évaluation : 15" FontSize="15" HorizontalOptions="Center" FontAttributes="Bold"
-                       VerticalOptions="Center" />
+                <FlexLayout JustifyContent="Center">
+                    <Label Text="Categorie:  " FontAttributes="Bold"></Label>
+                    <Label Text="{Binding SelectedYoutuber.Categorie}" FontSize="15"
+                           FontAttributes="None"/>
+                </FlexLayout>
+                <FlexLayout JustifyContent="Center">
+                    <Label Text="Age minimum recommandé:  " FontAttributes="Bold"></Label>
+                    <!--<Label Text="{Binding SelectedYoutuber.AdvisedAge}" FontSize="15"
+                        FontAttributes="None" /> -->
+
+                    <Label Text="{Binding SelectedYoutuber.AdvisedAge}"></Label>
+                </FlexLayout>
+                <FlexLayout JustifyContent="Center">
+                    <Label Text="Danger:  " FontAttributes="Bold"></Label>
+                    <Label Text="{Binding SelectedYoutuber.Scam}"></Label>
+                </FlexLayout>
+                
             </StackLayout>
             <StackLayout Orientation="Horizontal" HeightRequest="50" BackgroundColor="White" Padding="5"
                          HorizontalOptions="Center" VerticalOptions="Center">
                 <StackLayout  BackgroundColor="White" Orientation="Vertical" HorizontalOptions="Center"
                               VerticalOptions="Center">
-                    <Image Source="neutre.png" HeightRequest="60" WidthRequest="60"
+
+                    <Image Source="{Binding SelectedYoutuber.EmojiRate}" HeightRequest="60" WidthRequest="60"
                            BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
+                    
                 </StackLayout>
             </StackLayout>
-            <Button Text="Donner mon avis!" Command="{Binding NavigateToProfilCommand}"></Button>
+            <Button Text="Donner mon avis!" Command="{Binding NavigateToProfilCommand}" 
+                    IsEnabled="{Binding EnableButtonOpinion}"></Button>
         </StackLayout>
     </ScrollView>
 

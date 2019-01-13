@@ -12,17 +12,26 @@ namespace ProjetMobileB3.Models
 
         public string Categorie { get; set; }
         public string Scam { get; set; }
-        public int AverateRate { get; set; }
+        public int AverageRate { get; set; }
         public string EmojiRate { get; set; }
         public string EmojiAdvisedAge { get; set; }
+
+        public string EmojiStars { get; set; }
         public int AdvisedAge { get; set; }
 
 
-        public Youtuber(int Id, string Nickname, string Logo)
+        public Youtuber(int Id, string Nickname, string Logo, string Categorie)
         {
             this.Id = Id;
             this.Logo = Logo;
             this.Nickname = Nickname;
+            this.Categorie = Categorie;
+            this.Scam = "Aucun";
+            this.AdvisedAge = 4;
+            this.AverageRate = 4;
+            this.EmojiRate = "happy.png";
+            this.EmojiAdvisedAge = "pegi4.PNG";
+            this.EmojiStars = "star4.PNG";
         }
 
     }
