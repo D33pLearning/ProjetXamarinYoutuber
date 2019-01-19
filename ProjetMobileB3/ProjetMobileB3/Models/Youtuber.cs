@@ -29,9 +29,9 @@ namespace ProjetMobileB3.Models
             this.Scam = "Aucun";
             this.AdvisedAge = 0;
             this.AverageRate = 0;
-            this.EmojiRate = "sad.png";
+            this.EmojiRate = "interrogation.png";
             this.EmojiAdvisedAge = "";
-            this.EmojiStars = "star1.PNG";
+            this.EmojiStars = "";
         }
 
         public Youtuber()

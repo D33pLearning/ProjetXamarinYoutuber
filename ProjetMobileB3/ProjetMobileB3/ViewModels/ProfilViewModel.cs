@@ -92,12 +92,26 @@ namespace ProjetMobileB3.ViewModels
 
 	    public List<int> Notes { get; set; }
 
+	    private bool _isFieldEmpty;
+	    public bool IsFieldEmpty
+	    {
+	        get { return _isFieldEmpty; }
+	        set
+	        {
+	            SetProperty(ref _isFieldEmpty, value);
+	            RaisePropertyChanged(nameof(IsFieldEmpty));
+	        }
+	    }
+
         public ProfilViewModel(INavigationService navigationService) : base(navigationService)
         {
             _navigationService = navigationService;
             NavigateToPublicProfilePageCommand = new DelegateCommand(NavigateToPublicProfilePage);
 
+            IsFieldEmpty = false;
+
             Arnaques = new List<string>();
+            Arnaques.Add("Aucun");
             Arnaques.Add("Dropshipping");
             Arnaques.Add("Incitation aux jeux d'argent");
             Arnaques.Add("Pornographie");
@@ -117,6 +131,8 @@ namespace ProjetMobileB3.ViewModels
             Notes.Add(4);
             Notes.Add(5);
         }
+
+
 
 	    public void UpdateSelectedYoutuber()
 	    {
@@ -151,10 +167,17 @@ namespace ProjetMobileB3.ViewModels
 
 	    private void NavigateToPublicProfilePage()
 	    {
-            UpdateSelectedYoutuber();
-            var parameter = new NavigationParameters();
-	        parameter.Add("youtuber", SelectedYoutuber);
-	        _navigationService.NavigateAsync(NAVIGATE_TO_PUBLIC_PROFILE_PAGE, parameter);
+	        if (ChoiceAdvisedAge != 0 && ChoiceAverageRate != 0 && Choice != null)
+	        {
+	            UpdateSelectedYoutuber();
+	            var parameter = new NavigationParameters();
+	            parameter.Add("youtuber", SelectedYoutuber);
+	            _navigationService.NavigateAsync(NAVIGATE_TO_PUBLIC_PROFILE_PAGE, parameter);
+	        }
+	        else
+	        {
+	            IsFieldEmpty = true;
+	        }
 	    }
 
 	    public override void OnNavigatedTo(INavigationParameters parameters)

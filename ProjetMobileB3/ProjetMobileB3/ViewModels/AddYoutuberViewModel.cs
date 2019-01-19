@@ -107,6 +107,8 @@ namespace ProjetMobileB3.ViewModels
             NewYoutuber = new Youtuber();
             Youtubers = new List<Youtuber>();
 
+            IsFieldEmpty = false;
+
             Logos = new List<string>();
             //Logos.Add("emptyLogoMan.jpg");
             //Logos.Add("emptyLogoWoman.png");
@@ -123,12 +125,28 @@ namespace ProjetMobileB3.ViewModels
             Categories.Add("Sport");
         }
 
+        private bool _isFieldEmpty;
+        public bool IsFieldEmpty
+        {
+            get { return _isFieldEmpty; }
+            set { SetProperty(ref _isFieldEmpty, value);
+                RaisePropertyChanged(nameof(IsFieldEmpty));
+            }
+        }
+
         private void NavigateToMainPage()
         {
-            Youtubers.Add(NewYoutuber);
-            var parameter = new NavigationParameters();
-            parameter.Add("youtuber", Youtubers);
-            _navigationService.NavigateAsync(NAVIGATE_TO_MAIN_PAGE, parameter);
+            if (ChoiceCategorie != null && ChoiceLogo != null && ChoiceNickname != null)
+            {
+                Youtubers.Add(NewYoutuber);
+                var parameter = new NavigationParameters();
+                parameter.Add("youtuber", Youtubers);
+                _navigationService.NavigateAsync(NAVIGATE_TO_MAIN_PAGE, parameter);
+            }
+            else
+            {
+              IsFieldEmpty = true;
+            }
         }
 
         public override void OnNavigatedTo(INavigationParameters parameters)
@@ -138,5 +156,6 @@ namespace ProjetMobileB3.ViewModels
         }
 
 
+  
     }
 }

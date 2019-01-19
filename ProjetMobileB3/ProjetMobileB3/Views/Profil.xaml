@@ -33,8 +33,11 @@
                     ItemsSource="{Binding Notes}" 
                     SelectedItem="{Binding ChoiceAverageRate, Mode=TwoWay}">
             </Picker>
+            <Label Text="Veuillez renseigner tous les champs" TextColor="Red" 
+                   IsVisible="{Binding IsFieldEmpty}"></Label>
             <Button Text="Valider" 
-                    Command="{Binding NavigateToPublicProfilePageCommand}">
+                    Command="{Binding NavigateToPublicProfilePageCommand}"
+                    >
             </Button>
         </StackLayout>
     </ScrollView>

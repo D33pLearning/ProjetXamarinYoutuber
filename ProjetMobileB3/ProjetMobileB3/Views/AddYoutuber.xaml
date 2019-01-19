@@ -26,6 +26,8 @@
                    Text="{Binding ChoiceNickname, Mode=TwoWay}"
                    FontAttributes="Bold">
             </Entry>
+            <Label Text="Veuillez renseigner tous les champs" TextColor="Red" 
+                   IsVisible="{Binding IsFieldEmpty}"></Label>
             <Button Text="Valider" 
                     Command="{Binding NavigateToMainPageCommand}">
             </Button>

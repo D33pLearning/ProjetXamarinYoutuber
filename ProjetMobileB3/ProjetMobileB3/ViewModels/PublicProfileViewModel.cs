@@ -5,6 +5,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Linq;
+using System.Threading.Tasks;
 using ProjetMobileB3.Models;
 
 namespace ProjetMobileB3.ViewModels
@@ -39,6 +40,7 @@ namespace ProjetMobileB3.ViewModels
 
 	    }
 
+
         public PublicProfileViewModel(INavigationService navigationService): base(navigationService)
         {
             _navigationService = navigationService;
@@ -49,17 +51,16 @@ namespace ProjetMobileB3.ViewModels
 	    private void NavigateToProfilPage()
 	    {
 	        //EnableButtonOpinion = false;
-            var parameter = new NavigationParameters();
+	        var parameter = new NavigationParameters();
 	        parameter.Add("youtuber", SelectedYoutuber);
-            _navigationService.NavigateAsync(NAVIGATE_TO_PROFIL_PAGE, parameter);
+	        _navigationService.NavigateAsync(NAVIGATE_TO_PROFIL_PAGE, parameter);
 	    }
 
 	    public override void OnNavigatedTo(INavigationParameters parameters)
 	    {
 	        var youtubeur = parameters["youtuber"] as Youtuber;
 	        SelectedYoutuber = youtubeur;
-
+	        Task.Delay(1);
 	    }
-
     }
 }

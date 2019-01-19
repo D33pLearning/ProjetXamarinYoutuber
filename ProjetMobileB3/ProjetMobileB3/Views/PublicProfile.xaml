@@ -31,7 +31,7 @@
                     <Label Text="Danger:  " FontAttributes="Bold" StyleClass="MyLabel"></Label>
                     <Label Text="{Binding SelectedYoutuber.Scam}" StyleClass="MyLabel"></Label>
                 </FlexLayout>
-                
+
             </StackLayout>
             <StackLayout Orientation="Horizontal" HeightRequest="50" BackgroundColor="White" Padding="5"
                          HorizontalOptions="Center" VerticalOptions="Center">
@@ -40,12 +40,11 @@
 
                     <Image Source="{Binding SelectedYoutuber.EmojiRate}" HeightRequest="60" WidthRequest="60"
                            BackgroundColor="White" HorizontalOptions="Center" VerticalOptions="Center" />
-                    
+
                 </StackLayout>
             </StackLayout>
             <Button Text="Donner mon avis!" Command="{Binding NavigateToProfilCommand}" 
                     IsEnabled="{Binding EnableButtonOpinion}"></Button>
         </StackLayout>
     </ScrollView>
-
 </ContentPage>
