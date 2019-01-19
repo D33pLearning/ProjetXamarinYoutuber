@@ -16,8 +16,8 @@
             </StackLayout>
             <StackLayout Spacing="0" Padding="0" BackgroundColor="White">
                 <FlexLayout JustifyContent="Center">
-                    <Label Text="Categorie:  " FontAttributes="Bold"></Label>
-                    <Label Text="{Binding SelectedYoutuber.Categorie}" FontSize="15"
+                    <Label Text="Categorie:  " FontAttributes="Bold" StyleClass="MyLabel"></Label>
+                    <Label Text="{Binding SelectedYoutuber.Categorie}" StyleClass="MyLabel" FontSize="15"
                            FontAttributes="None"/>
                 </FlexLayout>
                 <FlexLayout JustifyContent="Center">
@@ -25,11 +25,11 @@
                     <!--<Label Text="{Binding SelectedYoutuber.AdvisedAge}" FontSize="15"
                         FontAttributes="None" /> -->
 
-                    <Label Text="{Binding SelectedYoutuber.AdvisedAge}"></Label>
+                    <Label Text="{Binding SelectedYoutuber.AdvisedAge}" StyleClass="MyLabel"></Label>
                 </FlexLayout>
                 <FlexLayout JustifyContent="Center">
-                    <Label Text="Danger:  " FontAttributes="Bold"></Label>
-                    <Label Text="{Binding SelectedYoutuber.Scam}"></Label>
+                    <Label Text="Danger:  " FontAttributes="Bold" StyleClass="MyLabel"></Label>
+                    <Label Text="{Binding SelectedYoutuber.Scam}" StyleClass="MyLabel"></Label>
                 </FlexLayout>
                 
             </StackLayout>

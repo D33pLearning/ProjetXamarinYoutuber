@@ -100,9 +100,13 @@ namespace ProjetMobileB3.ViewModels
             Arnaques = new List<string>();
             Arnaques.Add("Dropshipping");
             Arnaques.Add("Incitation aux jeux d'argent");
+            Arnaques.Add("Pornographie");
+            Arnaques.Add("Vulgarité");
 
             Ages = new List<int>();
-            Ages.Add(10);
+            Ages.Add(3);
+            Ages.Add(7);
+            Ages.Add(12);
             Ages.Add(16);
             Ages.Add(18);
 
@@ -118,11 +122,10 @@ namespace ProjetMobileB3.ViewModels
 	    {
             if (Choice != null)
 	            SelectedYoutuber.Scam = Choice;
-          
-	        if (ChoiceAverageRate != 0)
-                SelectedYoutuber.AverageRate = (ChoiceAverageRate + SelectedYoutuber.AverageRate) / 2;
-	        if (ChoiceAdvisedAge != 0)
-                SelectedYoutuber.AdvisedAge = (ChoiceAdvisedAge + SelectedYoutuber.AdvisedAge) / 2;
+
+
+	        SelectedYoutuber.AverageRate = ChoiceAverageRate;
+            SelectedYoutuber.AdvisedAge = ChoiceAdvisedAge;
 
 	        if (SelectedYoutuber != null)
 	        {

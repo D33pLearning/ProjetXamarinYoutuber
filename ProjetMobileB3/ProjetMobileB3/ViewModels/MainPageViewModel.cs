@@ -4,24 +4,36 @@ using Prism.Navigation;
 using ProjetMobileB3.Models;
 using System;
 using System.Collections.Generic;
+using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using Xamarin.Forms;
 
 namespace ProjetMobileB3.ViewModels
 {
-    public class MainPageViewModel : ViewModelBase
+    public class MainPageViewModel : ViewModelBase, INotifyPropertyChanged
     {
         private const String NAVIGATE_TO_PUBLIC_PROFILE_PAGE = "PublicProfile";  
         public INavigationService _navigationService;
         public DelegateCommand NavigateToPublicProfilePageCommand { get; private set; }
         public DelegateCommand NavigateToAddYoutuberCommand { get; private set; }
 
-        public List<Youtuber> Youtubers { get; set; }
+        private List<Youtuber> _youtubers;
+        public List<Youtuber> Youtubers
+        {
+            get
+            {
+                return _youtubers;
+            }
+            set
+            {
+                _youtubers = value;
+                RaisePropertyChanged(nameof(Youtubers));
+                //NavigateToYoutuberDetail(_selectedYoutuber);
+            }
+        }
 
         private Youtuber _selectedYoutuber;
-
-
         public Youtuber SelectedYoutuber
         {
             get
@@ -32,6 +44,21 @@ namespace ProjetMobileB3.ViewModels
             {
                 _selectedYoutuber = value;
                 RaisePropertyChanged(nameof(SelectedYoutuber));
+                //NavigateToYoutuberDetail(_selectedYoutuber);
+            }
+        }
+
+        private Youtuber _newYoutuber;
+        public Youtuber NewYoutuber
+        {
+            get
+            {
+                return _newYoutuber;
+            }
+            set
+            {
+                _newYoutuber = value;
+                RaisePropertyChanged(nameof(NewYoutuber));
                 //NavigateToYoutuberDetail(_selectedYoutuber);
             }
         }
@@ -74,7 +101,28 @@ namespace ProjetMobileB3.ViewModels
 
         private void NavigateToAddYoutuberPage()
         {
-            _navigationService.NavigateAsync("AddYoutuber");
+            var parameter = new NavigationParameters();
+            parameter.Add("youtuber", Youtubers);
+            _navigationService.NavigateAsync("AddYoutuber", parameter);
+        }
+
+        public override void OnNavigatedTo(INavigationParameters parameters)
+        {
+            var ayoutubeur = parameters["youtuber"] as List<Youtuber>;
+            
+               
+            if (ayoutubeur != null)
+            {
+                Youtubers = ayoutubeur;
+                var refreshYoutubers = Youtubers as List<Youtuber>;
+                Youtubers = new List<Youtuber>();
+                foreach (var youtuber in refreshYoutubers)
+                {
+                    Youtubers.Add(youtuber);
+                }
+
+                ayoutubeur = null;
+            }
         }
     }
 }

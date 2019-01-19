@@ -13,3 +13,4 @@ C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Deb
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.dll
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.pdb
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.csprojAssemblyReference.cache
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Stylesheet\styles.css.g.cs

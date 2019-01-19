@@ -118,6 +118,9 @@ C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\obj\Debug\81\res\drawable\star4.png
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\obj\Debug\81\res\drawable\star5.png
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\obj\Debug\81\res\drawable\zerator.png
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\obj\Debug\81\res\drawable\emptylogo.png
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\obj\Debug\81\res\drawable\emptylogoman.jpg
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\obj\Debug\81\res\drawable\emptylogowoman.png
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\bin\Debug\ProjetMobileB3.Android.dll
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\obj\Debug\81\linksrc\ProjetMobileB3.Android.dll.mdb
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3.Android\obj\Debug\81\linksrc\FormsViewGroup.dll.mdb

@@ -10,20 +10,23 @@
         <StackLayout>
             <Label Text="Le youtubeur est responsable d'une arnaque / mauvais comportement" 
                    FontSize="15" HorizontalOptions="Start"
-                   FontAttributes="Bold" />
+                   FontAttributes="Bold" 
+                   StyleClass="MyLabel"/>
             <Picker FontAttributes="Bold" ItemsSource="{Binding Arnaques}" 
                     SelectedItem="{Binding Choice, Mode=TwoWay}">
             </Picker>
             <Label Text="Quel age minimum recommanderiez vous pour le contenu proposé"
                    FontSize="15" HorizontalOptions="Start"
-                   FontAttributes="Bold">
+                   FontAttributes="Bold"
+                   StyleClass="MyLabel">
             </Label>
             <Picker FontAttributes="Bold" ItemsSource="{Binding Ages}" 
                      SelectedItem="{Binding ChoiceAdvisedAge}">
             </Picker>
             <Label Text="Quelle note lui accorderiez vous?" FontSize="15" HorizontalOptions="Start"
                    FontAttributes="Bold"
-                   >
+                   StyleClass="MyLabel">
+                
             </Label>
             <Picker 
                     FontAttributes="Bold" 

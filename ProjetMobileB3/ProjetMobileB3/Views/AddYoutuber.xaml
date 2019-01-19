@@ -4,12 +4,34 @@
              xmlns:prism="clr-namespace:Prism.Mvvm;assembly=Prism.Forms"
              prism:ViewModelLocator.AutowireViewModel="True"
              x:Class="ProjetMobileB3.Views.AddYoutuber">
-    
-    <FlexLayout>
-        <Label Text="Pseudo"></Label>
-        <Label Text="Categories"></Label>
-    </FlexLayout>
-    
-    
+
+    <ScrollView>
+        <StackLayout>
+            <Label Text="Selectionnez une image" StyleClass="MyLabel"
+                   FontSize="15" HorizontalOptions="Start"
+                   FontAttributes="Bold" />
+            <Picker FontAttributes="Bold" ItemsSource="{Binding Logos}" 
+                    SelectedItem="{Binding ChoiceLogo}">
+            </Picker>
+            <Label Text="Selectionnez une catégorie" StyleClass="MyLabel"
+                   FontSize="15" HorizontalOptions="Start"
+                   FontAttributes="Bold" />
+            <Picker FontAttributes="Bold" ItemsSource="{Binding Categories}" 
+                    SelectedItem="{Binding ChoiceCategorie}">
+            </Picker>
+            <Label Text="Nom du Youtubeur" FontSize="15" HorizontalOptions="Start" StyleClass="MyLabel"
+                   FontAttributes="Bold">
+            </Label>
+            <Entry Keyboard="Text"
+                   Text="{Binding ChoiceNickname, Mode=TwoWay}"
+                   FontAttributes="Bold">
+            </Entry>
+            <Button Text="Valider" 
+                    Command="{Binding NavigateToMainPageCommand}">
+            </Button>
+        </StackLayout>
+    </ScrollView>
+
+
 
 </ContentPage>

@@ -27,11 +27,16 @@ namespace ProjetMobileB3.Models
             this.Nickname = Nickname;
             this.Categorie = Categorie;
             this.Scam = "Aucun";
-            this.AdvisedAge = 4;
-            this.AverageRate = 4;
-            this.EmojiRate = "happy.png";
-            this.EmojiAdvisedAge = "pegi4.PNG";
-            this.EmojiStars = "star4.PNG";
+            this.AdvisedAge = 0;
+            this.AverageRate = 0;
+            this.EmojiRate = "sad.png";
+            this.EmojiAdvisedAge = "";
+            this.EmojiStars = "star1.PNG";
+        }
+
+        public Youtuber()
+        {
+
         }
 
     }
