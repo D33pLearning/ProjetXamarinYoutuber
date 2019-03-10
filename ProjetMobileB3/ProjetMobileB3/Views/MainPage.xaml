@@ -24,6 +24,7 @@
             <Label Text="{Binding Test}"></Label>
             <Button Text="Ajouter un nouveau youtubeur!" Command="{Binding NavigateToAddYoutuberCommand}"></Button>
         </StackLayout>
+
     </ScrollView>
     
 

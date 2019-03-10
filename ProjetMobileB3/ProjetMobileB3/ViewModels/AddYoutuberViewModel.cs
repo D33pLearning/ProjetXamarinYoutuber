@@ -138,9 +138,11 @@ namespace ProjetMobileB3.ViewModels
         {
             if (ChoiceCategorie != null && ChoiceLogo != null && ChoiceNickname != null)
             {
+
                 Youtubers.Add(NewYoutuber);
                 var parameter = new NavigationParameters();
                 parameter.Add("youtuber", Youtubers);
+                parameter.Add("new", NewYoutuber);
                 _navigationService.NavigateAsync(NAVIGATE_TO_MAIN_PAGE, parameter);
             }
             else

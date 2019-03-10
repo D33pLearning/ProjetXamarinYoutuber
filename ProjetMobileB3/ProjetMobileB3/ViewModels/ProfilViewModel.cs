@@ -7,13 +7,16 @@ using System.ComponentModel;
 using System.Linq;
 using ProjetMobileB3.Models;
 using Xamarin.Forms;
+using SQLite;
 
 namespace ProjetMobileB3.ViewModels
 {
 	public class ProfilViewModel : ViewModelBase, INotifyPropertyChanged
 	{
-	    private INavigationService _navigationService;
-	    private const String NAVIGATE_TO_PUBLIC_PROFILE_PAGE = "PublicProfile";
+	    public SQLiteConnection db { get; set; }
+
+        private INavigationService _navigationService;
+	    private const String NAVIGATE_TO_MAIN_PAGE = "MainPage";
 	    public DelegateCommand NavigateToPublicProfilePageCommand { get; private set; }
 
 	    private Youtuber _selectedYoutuber;
@@ -76,17 +79,6 @@ namespace ProjetMobileB3.ViewModels
 	        }
 	    }
 
-        private Opinion _opinion;
-	    public Opinion Opinion
-	    {
-	        get { return _opinion; }
-	        set
-	        {
-	            _opinion = value;
-	            RaisePropertyChanged(nameof(Opinion));
-	        }
-
-	    }
         public List<String> Arnaques { get; set; }
 	    public List<int> Ages { get; set; }
 
@@ -111,11 +103,13 @@ namespace ProjetMobileB3.ViewModels
             IsFieldEmpty = false;
 
             Arnaques = new List<string>();
-            Arnaques.Add("Aucun");
+            Arnaques.Add("Aucune");
             Arnaques.Add("Dropshipping");
             Arnaques.Add("Incitation aux jeux d'argent");
             Arnaques.Add("Pornographie");
             Arnaques.Add("Vulgarité");
+            Arnaques.Add("Violence");
+            Arnaques.Add("Pédophilie");
 
             Ages = new List<int>();
             Ages.Add(3);
@@ -170,9 +164,10 @@ namespace ProjetMobileB3.ViewModels
 	        if (ChoiceAdvisedAge != 0 && ChoiceAverageRate != 0 && Choice != null)
 	        {
 	            UpdateSelectedYoutuber();
+	            db.Update(SelectedYoutuber);
 	            var parameter = new NavigationParameters();
 	            parameter.Add("youtuber", SelectedYoutuber);
-	            _navigationService.NavigateAsync(NAVIGATE_TO_PUBLIC_PROFILE_PAGE, parameter);
+	            _navigationService.NavigateAsync(NAVIGATE_TO_MAIN_PAGE, parameter);
 	        }
 	        else
 	        {
@@ -183,7 +178,8 @@ namespace ProjetMobileB3.ViewModels
 	    public override void OnNavigatedTo(INavigationParameters parameters)
 	    {
 	        var youtubeur = parameters["youtuber"] as Youtuber;
-	        SelectedYoutuber = youtubeur;
+	        db = parameters["db"] as SQLiteConnection;
+            SelectedYoutuber = youtubeur;
 	    }
 
     }

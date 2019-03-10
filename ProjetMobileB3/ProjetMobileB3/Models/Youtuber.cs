@@ -1,4 +1,5 @@
-﻿using System;
+﻿using SQLite;
+using System;
 using System.Collections.Generic;
 using System.Text;
 
@@ -6,6 +7,7 @@ namespace ProjetMobileB3.Models
 {
     public class Youtuber
     {
+        [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Logo { get; set; }
         public string Nickname { get; set; }
@@ -20,9 +22,9 @@ namespace ProjetMobileB3.Models
         public int AdvisedAge { get; set; }
 
 
-        public Youtuber(int Id, string Nickname, string Logo, string Categorie)
+        public Youtuber(string Nickname, string Logo, string Categorie)
         {
-            this.Id = Id;
+ 
             this.Logo = Logo;
             this.Nickname = Nickname;
             this.Categorie = Categorie;
@@ -36,7 +38,12 @@ namespace ProjetMobileB3.Models
 
         public Youtuber()
         {
-
+            this.Scam = "Aucun";
+            this.AdvisedAge = 0;
+            this.AverageRate = 0;
+            this.EmojiRate = "interrogation.png";
+            this.EmojiAdvisedAge = "";
+            this.EmojiStars = "";
         }
 
     }

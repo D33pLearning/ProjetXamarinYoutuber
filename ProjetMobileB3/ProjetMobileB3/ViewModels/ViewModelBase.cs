@@ -15,7 +15,7 @@ namespace ProjetMobileB3.ViewModels
         protected INavigationService NavigationService { get; private set; }
 
         
-        public List<Opinion> Opinions { get; set; }
+        //public List<Opinion> Opinions { get; set; }
         private string _title;
         public string Title
         {
@@ -33,7 +33,7 @@ namespace ProjetMobileB3.ViewModels
 
             
 
-            Opinions = new List<Opinion>();
+            //Opinions = new List<Opinion>();
         }
 
         public virtual void OnNavigatedFrom(INavigationParameters parameters)

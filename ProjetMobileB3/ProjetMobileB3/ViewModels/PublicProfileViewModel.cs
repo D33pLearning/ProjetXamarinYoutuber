@@ -7,12 +7,15 @@ using System.ComponentModel;
 using System.Linq;
 using System.Threading.Tasks;
 using ProjetMobileB3.Models;
+using SQLite;
 
 namespace ProjetMobileB3.ViewModels
 {
 	public class PublicProfileViewModel : ViewModelBase, INotifyPropertyChanged
 	{
-	    private const String NAVIGATE_TO_PROFIL_PAGE = "Profil";
+	    public SQLiteConnection db { get; set; }
+
+        private const String NAVIGATE_TO_PROFIL_PAGE = "Profil";
 	    private INavigationService _navigationService;
 	    public DelegateCommand NavigateToProfilCommand { get; private set; }
 
@@ -53,14 +56,16 @@ namespace ProjetMobileB3.ViewModels
 	        //EnableButtonOpinion = false;
 	        var parameter = new NavigationParameters();
 	        parameter.Add("youtuber", SelectedYoutuber);
-	        _navigationService.NavigateAsync(NAVIGATE_TO_PROFIL_PAGE, parameter);
+	        parameter.Add("db", db);
+            _navigationService.NavigateAsync(NAVIGATE_TO_PROFIL_PAGE, parameter);
 	    }
 
 	    public override void OnNavigatedTo(INavigationParameters parameters)
 	    {
 	        var youtubeur = parameters["youtuber"] as Youtuber;
-	        SelectedYoutuber = youtubeur;
-	        Task.Delay(1);
+            db = parameters["db"] as SQLiteConnection;
+            SelectedYoutuber = youtubeur;
+	        //Task.Delay(1);
 	    }
     }
 }

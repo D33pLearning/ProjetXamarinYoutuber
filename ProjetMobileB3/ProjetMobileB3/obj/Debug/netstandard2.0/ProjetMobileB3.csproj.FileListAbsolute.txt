@@ -6,6 +6,7 @@ C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Deb
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Views\MainPage.xaml.g.cs
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Views\Profil.xaml.g.cs
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Views\PublicProfile.xaml.g.cs
+C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Stylesheet\styles.css.g.cs
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.csproj.CoreCompileInputs.cache
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.AssemblyInfoInputs.cache
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.AssemblyInfo.cs
@@ -13,4 +14,3 @@ C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Deb
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.dll
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.pdb
 C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\ProjetMobileB3.csprojAssemblyReference.cache
-C:\Users\Jerem\source\repos\ProjetMobileB3\ProjetMobileB3\ProjetMobileB3\obj\Debug\netstandard2.0\Stylesheet\styles.css.g.cs
