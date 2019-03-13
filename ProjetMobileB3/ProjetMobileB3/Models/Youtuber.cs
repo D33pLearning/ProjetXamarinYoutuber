@@ -22,18 +22,18 @@ namespace ProjetMobileB3.Models
         public int AdvisedAge { get; set; }
 
 
-        public Youtuber(string Nickname, string Logo, string Categorie)
+        public Youtuber(string nickname, string logo, string categorie)
         {
  
-            this.Logo = Logo;
-            this.Nickname = Nickname;
-            this.Categorie = Categorie;
-            this.Scam = "Aucun";
-            this.AdvisedAge = 0;
-            this.AverageRate = 0;
-            this.EmojiRate = "interrogation.png";
-            this.EmojiAdvisedAge = "";
-            this.EmojiStars = "";
+            Logo = logo;
+            Nickname = nickname;
+            Categorie = categorie;
+            Scam = "Aucun";
+            AdvisedAge = 0;
+            AverageRate = 0;
+            EmojiRate = "interrogation.png";
+            EmojiAdvisedAge = "";
+            EmojiStars = "";
         }
 
         public Youtuber()

@@ -108,6 +108,12 @@ class MonoPackageManager_Resources {
 		/* We need to ensure that "ProjetMobileB3.Android.dll" comes first in this list. */
 		"ProjetMobileB3.Android.dll",
 		"FormsViewGroup.dll",
+		"Microsoft.AppCenter.Analytics.Android.Bindings.dll",
+		"Microsoft.AppCenter.Analytics.dll",
+		"Microsoft.AppCenter.Android.Bindings.dll",
+		"Microsoft.AppCenter.Crashes.Android.Bindings.dll",
+		"Microsoft.AppCenter.Crashes.dll",
+		"Microsoft.AppCenter.dll",
 		"Newtonsoft.Json.dll",
 		"Prism.dll",
 		"Prism.Forms.dll",

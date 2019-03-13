@@ -8,15 +8,14 @@ using System.Linq;
 using ProjetMobileB3.Models;
 using Xamarin.Forms;
 using SQLite;
+using Unity.ObjectBuilder.Policies;
+using ProjetMobileB3.Interfaces;
 
 namespace ProjetMobileB3.ViewModels
 {
 	public class ProfilViewModel : ViewModelBase, INotifyPropertyChanged
 	{
-	    public SQLiteConnection db { get; set; }
-
         private INavigationService _navigationService;
-	    private const String NAVIGATE_TO_MAIN_PAGE = "MainPage";
 	    public DelegateCommand NavigateToPublicProfilePageCommand { get; private set; }
 
 	    private Youtuber _selectedYoutuber;
@@ -30,7 +29,6 @@ namespace ProjetMobileB3.ViewModels
 	        {
 	            _selectedYoutuber = value;
 	            RaisePropertyChanged(nameof(SelectedYoutuber));
-	            //NavigateToYoutuberDetail(_selectedYoutuber);
 	        }
 	    }
 
@@ -46,7 +44,6 @@ namespace ProjetMobileB3.ViewModels
 	            _choice = value;
 	            RaisePropertyChanged(nameof(Choice));
 	            SelectedYoutuber.Scam = Choice;
-	            //NavigateToYoutuberDetail(_selectedYoutuber);
 	        }
 	    }
 
@@ -79,8 +76,13 @@ namespace ProjetMobileB3.ViewModels
 	        }
 	    }
 
-        public List<String> Arnaques { get; set; }
-	    public List<int> Ages { get; set; }
+        private List<String> _scams;
+        public List<String> Scams
+        {
+            get { return _scams; }
+            set { SetProperty(ref _scams, value); }
+        }
+        public List<int> Ages { get; set; }
 
 	    public List<int> Notes { get; set; }
 
@@ -95,21 +97,21 @@ namespace ProjetMobileB3.ViewModels
 	        }
 	    }
 
-        public ProfilViewModel(INavigationService navigationService) : base(navigationService)
+        public ProfilViewModel(INavigationService navigationService, IMyDBService myDB) : base(navigationService, myDB)
         {
             _navigationService = navigationService;
             NavigateToPublicProfilePageCommand = new DelegateCommand(NavigateToPublicProfilePage);
 
             IsFieldEmpty = false;
 
-            Arnaques = new List<string>();
-            Arnaques.Add("Aucune");
-            Arnaques.Add("Dropshipping");
-            Arnaques.Add("Incitation aux jeux d'argent");
-            Arnaques.Add("Pornographie");
-            Arnaques.Add("Vulgarité");
-            Arnaques.Add("Violence");
-            Arnaques.Add("Pédophilie");
+            Scams = new List<string>();
+            Scams.Add("Aucune");
+            Scams.Add("Dropshipping");
+            Scams.Add("Incitation aux jeux d'argent");
+            Scams.Add("Pornographie");
+            Scams.Add("Vulgarité");
+            Scams.Add("Violence");
+            Scams.Add("Pédophilie");
 
             Ages = new List<int>();
             Ages.Add(3);
@@ -124,10 +126,9 @@ namespace ProjetMobileB3.ViewModels
             Notes.Add(3);
             Notes.Add(4);
             Notes.Add(5);
+
+           
         }
-
-
-
 	    public void UpdateSelectedYoutuber()
 	    {
             if (Choice != null)
@@ -158,16 +159,19 @@ namespace ProjetMobileB3.ViewModels
 	                SelectedYoutuber.EmojiStars = "star5.PNG";
 	        }
 	    }
-
-	    private void NavigateToPublicProfilePage()
+	    /*
+         * NAVIGATION
+         */
+        private void NavigateToPublicProfilePage()
 	    {
 	        if (ChoiceAdvisedAge != 0 && ChoiceAverageRate != 0 && Choice != null)
 	        {
 	            UpdateSelectedYoutuber();
-	            db.Update(SelectedYoutuber);
+	            MyDBService.UpdateYoutubeur(SelectedYoutuber);
 	            var parameter = new NavigationParameters();
 	            parameter.Add("youtuber", SelectedYoutuber);
-	            _navigationService.NavigateAsync(NAVIGATE_TO_MAIN_PAGE, parameter);
+                parameter.Add("refresh", true);
+	            _navigationService.GoBackAsync(parameter);
 	        }
 	        else
 	        {
@@ -178,9 +182,7 @@ namespace ProjetMobileB3.ViewModels
 	    public override void OnNavigatedTo(INavigationParameters parameters)
 	    {
 	        var youtubeur = parameters["youtuber"] as Youtuber;
-	        db = parameters["db"] as SQLiteConnection;
             SelectedYoutuber = youtubeur;
 	    }
-
     }
 }

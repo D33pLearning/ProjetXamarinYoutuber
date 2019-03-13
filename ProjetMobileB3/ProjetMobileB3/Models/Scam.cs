@@ -11,5 +11,15 @@ namespace ProjetMobileB3.Models
         [PrimaryKey, AutoIncrement]
         public int Id { get; set; }
         public string Libelle { get; set; }
+
+        public Scam()
+        {
+
+        }
+
+        public Scam(string libelle)
+        {
+            Libelle = libelle;
+        }
     }
 }

@@ -8,14 +8,13 @@ using System.Linq;
 using System.Threading.Tasks;
 using ProjetMobileB3.Models;
 using SQLite;
+using ProjetMobileB3.Interfaces;
+using ProjetMobileB3.Views;
 
 namespace ProjetMobileB3.ViewModels
 {
 	public class PublicProfileViewModel : ViewModelBase, INotifyPropertyChanged
 	{
-	    public SQLiteConnection db { get; set; }
-
-        private const String NAVIGATE_TO_PROFIL_PAGE = "Profil";
 	    private INavigationService _navigationService;
 	    public DelegateCommand NavigateToProfilCommand { get; private set; }
 
@@ -44,28 +43,35 @@ namespace ProjetMobileB3.ViewModels
 	    }
 
 
-        public PublicProfileViewModel(INavigationService navigationService): base(navigationService)
+        public PublicProfileViewModel(INavigationService navigationService, IMyDBService myDB) : base(navigationService, myDB)
         {
             _navigationService = navigationService;
             NavigateToProfilCommand = new DelegateCommand(NavigateToProfilPage);
             EnableButtonOpinion = true;
         }
 
-	    private void NavigateToProfilPage()
+	    /*
+         * NAVIGATION
+         */
+        private void NavigateToProfilPage()
 	    {
-	        //EnableButtonOpinion = false;
 	        var parameter = new NavigationParameters();
 	        parameter.Add("youtuber", SelectedYoutuber);
-	        parameter.Add("db", db);
-            _navigationService.NavigateAsync(NAVIGATE_TO_PROFIL_PAGE, parameter);
+            _navigationService.NavigateAsync(nameof(Profil), parameter);
 	    }
 
 	    public override void OnNavigatedTo(INavigationParameters parameters)
 	    {
 	        var youtubeur = parameters["youtuber"] as Youtuber;
-            db = parameters["db"] as SQLiteConnection;
-            SelectedYoutuber = youtubeur;
-	        //Task.Delay(1);
-	    }
+	        if (youtubeur != null)
+	        {
+	            SelectedYoutuber = youtubeur;
+	        }
+	        var refresh = parameters["refresh"];
+	        if (refresh != null)
+	        {
+	            SelectedYoutuber = MyDBService.SelectYoutubeurById(youtubeur.Id);
+	        }
+        }
     }
 }

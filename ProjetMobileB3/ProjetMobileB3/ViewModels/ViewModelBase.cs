@@ -6,6 +6,7 @@ using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Text;
+using ProjetMobileB3.Interfaces;
 using Xamarin.Forms;
 
 namespace ProjetMobileB3.ViewModels
@@ -13,8 +14,9 @@ namespace ProjetMobileB3.ViewModels
     public class ViewModelBase : BindableBase, INotifyPropertyChanged, INavigationAware, IDestructible
     {
         protected INavigationService NavigationService { get; private set; }
+        protected IMyDBService MyDBService { get; private set; }
 
-        
+
         //public List<Opinion> Opinions { get; set; }
         private string _title;
         public string Title
@@ -27,11 +29,11 @@ namespace ProjetMobileB3.ViewModels
 
    
 
-        public ViewModelBase(INavigationService navigationService)
+        public ViewModelBase(INavigationService navigationService, IMyDBService mydbservice)
         {
             NavigationService = navigationService;
+            MyDBService = mydbservice;
 
-            
 
             //Opinions = new List<Opinion>();
         }

@@ -1,10 +1,12 @@
 ﻿using Prism.Commands;
 using Prism.Mvvm;
 using Prism.Navigation;
+using ProjetMobileB3.Interfaces;
 using ProjetMobileB3.Models;
 using System;
 using System.Collections.Generic;
 using System.Linq;
+using ProjetMobileB3.Views;
 
 
 namespace ProjetMobileB3.ViewModels
@@ -12,8 +14,6 @@ namespace ProjetMobileB3.ViewModels
     public class AddYoutuberViewModel : ViewModelBase
     {
         private INavigationService _navigationService;
-
-        private const String NAVIGATE_TO_MAIN_PAGE = "MainPage";
 
         public DelegateCommand NavigateToMainPageCommand { get; private set; }
 
@@ -49,7 +49,6 @@ namespace ProjetMobileB3.ViewModels
             {
                 _newYoutuber = value;
                 RaisePropertyChanged(nameof(NewYoutuber));
-                //NavigateToYoutuberDetail(_selectedYoutuber);
             }
         }
 
@@ -66,7 +65,6 @@ namespace ProjetMobileB3.ViewModels
                 RaisePropertyChanged(nameof(ChoiceCategorie));
                 
                 NewYoutuber.Categorie = ChoiceCategorie;
-                //NavigateToYoutuberDetail(_selectedYoutuber);
             }
         }
 
@@ -99,7 +97,8 @@ namespace ProjetMobileB3.ViewModels
             }
         }
 
-        public AddYoutuberViewModel(INavigationService navigationService) : base(navigationService)
+        public AddYoutuberViewModel(INavigationService navigationService, IMyDBService myDB) 
+            : base(navigationService, myDB )
         {
             _navigationService = navigationService;
             NavigateToMainPageCommand = new DelegateCommand(NavigateToMainPage);
@@ -110,12 +109,9 @@ namespace ProjetMobileB3.ViewModels
             IsFieldEmpty = false;
 
             Logos = new List<string>();
-            //Logos.Add("emptyLogoMan.jpg");
-            //Logos.Add("emptyLogoWoman.png");
             Logos.Add("Femme");
             Logos.Add("Homme");
             
-
             Categories = new List<string>();
             Categories.Add("Musculation");
             Categories.Add("Podcast");
@@ -143,7 +139,8 @@ namespace ProjetMobileB3.ViewModels
                 var parameter = new NavigationParameters();
                 parameter.Add("youtuber", Youtubers);
                 parameter.Add("new", NewYoutuber);
-                _navigationService.NavigateAsync(NAVIGATE_TO_MAIN_PAGE, parameter);
+                _navigationService.NavigateAsync(nameof(MainPage), parameter);
+                
             }
             else
             {
@@ -156,8 +153,5 @@ namespace ProjetMobileB3.ViewModels
             var ayoutubeur = parameters["youtuber"] as List<Youtuber>;
             Youtubers = ayoutubeur;
         }
-
-
-  
     }
 }

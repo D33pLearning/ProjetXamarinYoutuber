@@ -12,7 +12,7 @@
                    FontSize="15" HorizontalOptions="Start"
                    FontAttributes="Bold" 
                    StyleClass="MyLabel"/>
-            <Picker FontAttributes="Bold" ItemsSource="{Binding Arnaques}" 
+            <Picker FontAttributes="Bold" ItemsSource="{Binding Scams}" 
                     SelectedItem="{Binding Choice, Mode=TwoWay}">
             </Picker>
             <Label Text="Quel age minimum recommanderiez vous pour le contenu proposé"

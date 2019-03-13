@@ -1,5 +1,7 @@
 ﻿using Prism;
 using Prism.Ioc;
+using ProjetMobileB3.Interfaces;
+using ProjetMobileB3.Services;
 using ProjetMobileB3.ViewModels;
 using ProjetMobileB3.Views;
 using Xamarin.Forms;
@@ -33,6 +35,7 @@ namespace ProjetMobileB3
             containerRegistry.RegisterForNavigation<Profil, ProfilViewModel>();
             containerRegistry.RegisterForNavigation<AddYoutuber, AddYoutuberViewModel>();
             containerRegistry.RegisterForNavigation<PublicProfile, PublicProfileViewModel>();
+            containerRegistry.RegisterSingleton<IMyDBService, MyDBService>();
         }
     }
 }
